@@ -12,20 +12,47 @@ This repository contains various TL-verilog files that were designed as part of 
 - TL-Verilog
 - [Makerchip](https://www.makerchip.com)
 
-## Description
+## Project Index
 
-### 1 Combinatorial Calculator
+Bookmarks might not work after a point of time.
 
-This is a simple combinatorial calculator that supports addition, subtraction, division and multiplication of 32 bit operands.
+|  Sl No. | Project| Description| Bookmark |
+|:-------|:-------|:-----------|
+| 1 | Combinatorial Calculator | This is a simple combinatorial calculator that supports addition, subtraction, division and multiplication of 32 bit operands. | |
+| 2 | Fibonacci Sequence Generator  | This shows a 32 bit Fibonacci Sequence generator | |
+| 3 | 32-Bit Counter| A simple 32 bit up counter | |
+| 4 | Sequential Calculator | This is an implementation of the simple calculator with sequential logic and output feedback| |
+| 5 | Pythagoras's Theorem | Pipelined logic to calculates the hypotenuse of a right triangle| https://makerchip.com/sandbox/0ADf9hQRW/0X6hXjN |
 
 
-#### Output
 
-The output waveform of the testbench obtained from xcelium is shown below:
+#### Output Waveforms
+
+The output waveforms generated using makerchip is shown below:
+1. Simple Calculator
 <p>
     <img = src = "./src/Figures/cb_calc_waveform.png">
 </p>
 
+2. Fibonacci Sequence Generator
+<p>
+    <img = src = "./src/Figures/fib_gen_waveform.png">
+</p>
+
+3. 32 bit Counter
+<p>
+    <img = src = "./src/Figures/counter_waveform.png">
+</p>
+
+4. Sequential Calculator
+<p>
+    <img = src = "./src/Figures/seq_calc_waveform.png">
+</p>
+
+5. Pipelined Pythagoras's Theorem
+<p>
+    <img = src = "./src/Figures/pythagoras_waveform.png">
+</p>
 
 ## License
 
@@ -35,8 +62,3 @@ This project is licensed under the GNU General Public License, Version 3 - see t
 
 - Author: Ujval Madhu
 - Email: ujvalmadhu003@gmail.com
-
-## Acknowledgments
-
-- This Fixed Priority Adder Design was referenced from Rahul Behl's design from [QuickSilicon](https://quicksilicon.in)
-- The Testbenches were designed independently with online resources including IEEE Std 1800.2017 System Verilog LRM
