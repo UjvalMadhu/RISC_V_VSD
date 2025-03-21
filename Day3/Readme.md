@@ -16,11 +16,15 @@ This repository contains various TL-verilog files that were designed as part of 
 
 Bookmarks might not work after a point of time.
 
+
 |  Sl No. | Project| Description| Bookmark |
 |:-------|:-------|:-----------|
-| 1 | Combinatorial Calculator | This is a simple combinatorial calculator that supports addition, subtraction, division and multiplication of 32 bit operands. | |
-| 2 | Fibonacci Sequence Generator  | This shows a 32 bit Fibonacci Sequence generator | |
-| 3 | 32-Bit Counter| A simple 32 bit up counter | |
+| 1 | Combinatorial Calculator | This is a simple combinatorial calculator that supports addition, subtraction, division and multiplication of 32 bit operands. | x |
+
+
+
+| 2 | Fibonacci Sequence Generator  | This shows a 32 bit Fibonacci Sequence generator | x |
+| 3 | 32-Bit Counter| A simple 32 bit up counter | x |
 | 4 | Sequential Calculator | This is an implementation of the simple calculator with sequential logic and output feedback| |
 | 5 | Pythagoras's Theorem | Pipelined logic to calculates the hypotenuse of a right triangle| https://makerchip.com/sandbox/0ADf9hQRW/0X6hXjN |
 
@@ -29,29 +33,31 @@ Bookmarks might not work after a point of time.
 #### Output Waveforms
 
 The output waveforms generated using makerchip is shown below:
+
+
 1. Simple Calculator
 <p>
-    <img = src = "./src/Figures/cb_calc_waveform.png">
+    <img = src = "./Figures/cb_calc_waveform.png">
 </p>
 
 2. Fibonacci Sequence Generator
 <p>
-    <img = src = "./src/Figures/fib_gen_waveform.png">
+    <img = src = "./Figures/fib_gen_waveform.png">
 </p>
 
 3. 32 bit Counter
 <p>
-    <img = src = "./src/Figures/counter_waveform.png">
+    <img = src = "./Figures/counter_waveform.png">
 </p>
 
 4. Sequential Calculator
 <p>
-    <img = src = "./src/Figures/seq_calc_waveform.png">
+    <img = src = "./Figures/seq_calc_waveform.png">
 </p>
 
 5. Pipelined Pythagoras's Theorem
 <p>
-    <img = src = "./src/Figures/pythagoras_waveform.png">
+    <img = src = "./Figures/pythagoras_waveform.png">
 </p>
 
 ## License
