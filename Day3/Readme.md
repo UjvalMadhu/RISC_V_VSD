@@ -14,11 +14,9 @@ This repository contains various TL-verilog files that were designed as part of 
 
 ## Project Index
 
-Bookmarks might not work after a point of time.
-
 
 |  Sl No. | Project| Description| Bookmark |
-|:-------|:-------|:-----------|
+|:-------|:-------|:-----------|:----------|
 | 1 | Combinatorial Calculator | This is a simple combinatorial calculator that supports addition, subtraction, division and multiplication of 32 bit operands. | x |
 
 
@@ -29,6 +27,7 @@ Bookmarks might not work after a point of time.
 | 5 | Pythagoras's Theorem | Pipelined logic to calculates the hypotenuse of a right triangle| https://makerchip.com/sandbox/0ADf9hQRW/0X6hXjN |
 
 
+Bookmarks might not work after a point of time.
 
 #### Output Waveforms
 
