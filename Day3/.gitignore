@@ -1,0 +1,7 @@
+# Windows
+*Zone.Identifier
+
+# IDE
+.vscode/
+.idea/
+*.code-workspace
