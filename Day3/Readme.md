@@ -37,7 +37,7 @@ The output waveforms generated using makerchip is shown below:
 
 1. Simple Calculator
 <p>
-    <img = src = "./Figures/cb_calc_waveform.png">
+    <img = src = "./Figures/cb_calc_waveform.PNG">
 </p>
 
 2. Fibonacci Sequence Generator
@@ -55,7 +55,7 @@ The output waveforms generated using makerchip is shown below:
     <img = src = "./Figures/seq_calc_waveform.png">
 </p>
 
-5. Pipelined Pythagoras's Theorem
+5. Pipelined Pythagoras's Theorem (output "h" is obtained after 3 clock cycles)
 <p>
     <img = src = "./Figures/pythagoras_waveform.png">
 </p>
