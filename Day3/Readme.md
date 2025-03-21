@@ -17,12 +17,9 @@ This repository contains various TL-verilog files that were designed as part of 
 
 |  Sl No. | Project| Description| Bookmark |
 |:-------|:-------|:-----------|:----------|
-| 1 | Combinatorial Calculator | This is a simple combinatorial calculator that supports addition, subtraction, division and multiplication of 32 bit operands. | x |
-
-
-
-| 2 | Fibonacci Sequence Generator  | This shows a 32 bit Fibonacci Sequence generator | x |
-| 3 | 32-Bit Counter| A simple 32 bit up counter | x |
+| 1 | Combinatorial Calculator | This is a simple combinatorial calculator that supports addition, subtraction, division and multiplication of 32 bit operands. |  |
+| 2 | Fibonacci Sequence Generator  | This shows a 32 bit Fibonacci Sequence generator |  |
+| 3 | 32-Bit Counter| A simple 32 bit up counter |  |
 | 4 | Sequential Calculator | This is an implementation of the simple calculator with sequential logic and output feedback| |
 | 5 | Pythagoras's Theorem | Pipelined logic to calculates the hypotenuse of a right triangle| https://makerchip.com/sandbox/0ADf9hQRW/0X6hXjN |
 
