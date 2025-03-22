@@ -22,6 +22,7 @@ This repository contains various TL-verilog files that were designed as part of 
 | 3 | 32-Bit Counter| A simple 32 bit up counter |  |
 | 4 | Sequential Calculator | This is an implementation of the simple calculator with sequential logic and output feedback| |
 | 5 | Pythagoras's Theorem | Pipelined logic to calculates the hypotenuse of a right triangle| https://makerchip.com/sandbox/0ADf9hQRW/0X6hXjN |
+| 6 | Pipeline Error Detector| Compiles various errors that can occur at different stages of a pipeline | https://makerchip.com/sandbox/0ADf9hQRW/01jhMx4 |
 
 
 Bookmarks might not work after a point of time.
@@ -51,7 +52,12 @@ The output waveforms generated using makerchip is shown below:
     <img = src = "./Figures/seq_calc_waveform.png">
 </p>
 
-5. Pipelined Pythagoras's Theorem (output "h" is obtained after 3 clock cycles)
+5. Pipelined Pythagoras's Theorem (output "h" is obtained after 2 clock cycles)
+<p>
+    <img = src = "./Figures/pythagoras_waveform.png">
+</p>
+
+6. Pipeline Error Detector
 <p>
     <img = src = "./Figures/pythagoras_waveform.png">
 </p>
