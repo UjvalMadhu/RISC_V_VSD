@@ -20,9 +20,10 @@ This repository contains various TL-verilog files that were designed as part of 
 | 1 | Combinatorial Calculator | This is a simple combinatorial calculator that supports addition, subtraction, division and multiplication of 32 bit operands. |  |
 | 2 | Fibonacci Sequence Generator  | This shows a 32 bit Fibonacci Sequence generator |  |
 | 3 | 32-Bit Counter| A simple 32 bit up counter |  |
-| 4 | Sequential Calculator | This is an implementation of the simple calculator with sequential logic and output feedback| |
-| 5 | Pythagoras's Theorem | Pipelined logic to calculates the hypotenuse of a right triangle| https://makerchip.com/sandbox/0ADf9hQRW/0X6hXjN |
-| 6 | Pipeline Error Detector| Compiles various errors that can occur at different stages of a pipeline | https://makerchip.com/sandbox/0ADf9hQRW/01jhMx4 |
+| 4 | Sequential Calculator | This is an implementation of the simple calculator with sequential logic and output feedback| [Makerchip link](https://makerchip.com/sandbox/0ADf9hQRW/08qh6Wy) |
+| 5 | Pythagoras's Theorem | Pipelined logic to calculates the hypotenuse of a right triangle| [Makerchip link](https://makerchip.com/sandbox/0ADf9hQRW/0X6hXjN) |
+| 6 | Pipeline Error Detector| Compiles various errors that can occur at different stages of a pipeline | [Makerchip link](https://makerchip.com/sandbox/0ADf9hQRW/01jhMx4) |
+| 7 | Piplelined Sequential Calculator with Oscillating Reset | This calculator implementation has a feedback path whereby the output from one calculation will act as the 2nd operand for the next calculation.| [Makerchip link](https://makerchip.com/sandbox/0ADf9hQRW/098hk8g#) |
 
 
 Bookmarks might not work after a point of time.
@@ -59,7 +60,7 @@ The output waveforms generated using makerchip is shown below:
 
 6. Pipeline Error Detector
 <p>
-    <img = src = "./Figures/pythagoras_waveform.png">
+    <img = src = "./Figures/error_detector_waveform.png">
 </p>
 
 ## License
