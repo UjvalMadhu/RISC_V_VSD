@@ -24,6 +24,7 @@ This repository contains various TL-verilog files that were designed as part of 
 | 5 | Pythagoras's Theorem | Pipelined logic to calculates the hypotenuse of a right triangle| [Makerchip link](https://makerchip.com/sandbox/0ADf9hQRW/0X6hXjN) |
 | 6 | Pipeline Error Detector| Compiles various errors that can occur at different stages of a pipeline | [Makerchip link](https://makerchip.com/sandbox/0ADf9hQRW/01jhMx4) |
 | 7 | Piplelined Sequential Calculator with Oscillating Reset | This calculator implementation has a feedback path whereby the output from one calculation will act as the 2nd operand for the next calculation.| [Makerchip link](https://makerchip.com/sandbox/0ADf9hQRW/098hk8g#) |
+| 8 | Pipelined Sequential Calculator with Memory and Recall| Features of oscillating Reset, Validity, Memory and Recall are added to the Sequential Calculator |[Makerchip Link](https://makerchip.com/sandbox/0ADf9hQRW/0g5hA8l) |
 
 
 Bookmarks might not work after a point of time.
@@ -62,6 +63,17 @@ The output waveforms generated using makerchip is shown below:
 <p>
     <img = src = "./Figures/error_detector_waveform.png">
 </p>
+
+7. Pipelined Sequential Calculator (Notice there is also an oscillating  reset feature)
+<p>
+    <img = src = "./Figures/pipelined_seq_calc_waveform.png">
+</p>
+
+8. Pipelined Sequential Calculator with Memory and Recall
+<p>
+    <img = src = "./Figures/seq_calc_mem_recall_waveform.png">
+</p>
+
 
 ## License
 
