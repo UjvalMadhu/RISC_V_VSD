@@ -40,11 +40,54 @@
    |cpu
       @0
          $reset = *reset;
+         // Read Enable for the Memory
          $imem_rd_en = ~ >>1$reset;
          
+         // Program Counter incrementing 4 Bytes(32 Bits) every clock cycle
          $pc[M4_IMEM_INDEX_CNT + 1:0] = >>1$reset ? 0 : >>1$pc + 3'd4;
          
-         $imem_rd_addr = $pc[M4_IMEM_INDEX_CNT + 1:2];
+         
+      @1
+         // Connecting the Program Counter to the memory address
+         $imem_rd_addr[M4_IMEM_INDEX_CNT -1:0] = $pc[M4_IMEM_INDEX_CNT + 1:2];
+         
+         // Reading Instructions from memory
+         $instr[31:0] = $imem_rd_data[31:0];
+         
+         
+         // Decoder Logic (Refer RISC-V ISA) (bits [1:0] is always 11)
+         
+         // For Instruction I
+         $is_i_instr = $instr[6:2] ==? 5'b0000x ||
+                       $instr[6:2] ==? 5'b001x0 ||
+                       $instr[6:2] == 5'b11001;
+         
+         // For Instruction R
+         $is_r_instr = $instr[6:2] == 5'b01011 ||
+                       $instr[6:2] == 5'b10100 ||
+                       $instr[6:2] ==? 5'b011x0;
+         
+         // For Instruction S
+         $is_s_instr = $instr[6:2] ==? 5'b0100x;
+         
+         // For Instruction B
+         $is_b_instr = $instr[6:2] == 5'b11000;
+         
+         // For Instruction J
+         $is_j_instr = $instr[6:2] == 5'b11011;
+         
+         // For Instruction U
+         $is_u_instr = $instr[6:2] ==? 5'b0x101;
+         
+         // Instruction Immediate Decode
+         $imm[31:0] = $is_i_instr ? { {21{$instr[31]}}, $instr[30:20] } :
+                      $is_s_instr ? { {21{$instr[31]}}, $instr[30:25], $instr[11:8], $instr[7]  }:
+                      $is_b_instr ? { {20{$instr[31]}}, $instr[7], $instr[30:25], $instr[11:8], 1'b0 }:
+                      $is_u_instr ? { $instr[31], $instr[30:20], $instr[19:12], {12{1'b0}} }:
+                      $is_j_instr ? { {12{$instr[31]}}, $instr[19:12], $instr[20], $instr[30:25], $instr[24:21], 1'b0 }:
+                      32'b0;
+                      
+                      
 
 
       // Note: Because of the magic we are using for visualisation, if visualisation is enabled below,
