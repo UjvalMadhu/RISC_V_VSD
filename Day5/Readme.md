@@ -18,7 +18,7 @@ instructions provided by [VSD](https://vlsisystemdesign.com) and [Redwood EDA](h
 
 |  Sl No. | Project| Description| Bookmark |
 |:-------|:-------|:-----------|:----------|
-| 1 | riscv_mc_arch| This is an implementation of the RISC-V u-architecture in TL-Verilog |  |
+| 1 | riscv_mc_arch| This is an implementation of the RISC-V u-architecture in TL-Verilog | https://myth.makerchip.com/sandbox/0jRfjh1Qk/0JZhqX5# |
 
 Bookmarks might not work after a point of time.
 
@@ -32,13 +32,22 @@ Some Hazards that could arise from pipelining are also effectively mitigated in 
 2. Read-Write Hazard
 3. Read After Write Hazard: This deals the case where we need to write an operand to the Register file, which will be used by the next instruction in the ALU. This is done by creating register bypasses to the ALU, which would allow the output from the previous execution to be directly used by the ALU in the next execution.
 
-Another improvement that was made was the correction of the branch target path. Since, we are not developing an early branch predictor path, and we will have two cycles that will have to be be discarded after a branch prediction has been detected. This is done by implementing a valid signal that activates the RF write only when the previous two cycles did not have any branches predicted.
+Another improvement that was made was the correction of the branch target path. Since, we are not developing an early branch predictor path, we will have two cycles that will have to be be discarded after a branch prediction has been detected. This is done by implementing a valid signal that activates the RF write only when the previous two cycles did not have any branches predicted.
 
-The complete RV321 Base Instruction set(Except FENCE, ECALL, EBRAKE) is coded to the decode logic in this implementation.
+The complete RV321 Base Instruction set(Except FENCE, ECALL, EBRAKE) is coded to the decode logic and the ALU in this implementation.
+We will also be using a single load instruction which loads the full word (LW) for all 5 variants of load, which are LB (load byte), LH (load half word), LW, LBU (load byte unsigned) and LHU (load half word unsigned).
+Similarly, for Store we will only be supporting the Store Word SW instruction, instead of separate for all three SW, SH and SB.
+
+#### This implementation also supports the Load Store instructions to Data Memory
+
+In load operation we aim to load a value from the main memory into the CPU's Register file. and in store operation, we aim to write a value from the RF to the main memory.
+
+Load operation is done by adding a MUX before RF write which can select the data read from the Data memory in 2 cycles if a load operation is needed.
 
 
 
-#### Output Waveforms
+
+#### Output (In progress)
 
 The output waveforms generated using makerchip is shown below:
 
