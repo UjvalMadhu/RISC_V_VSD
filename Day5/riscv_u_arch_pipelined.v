@@ -42,11 +42,15 @@
          $reset = *reset;
          // Read Enable for the Memory
          $imem_rd_en = ~ $reset;
+         // Valid Signal to Prevent Control and Read Write Hazards
+         $start = ~$reset & >>1$reset;
+         $valid = $reset ? 1'b0 : $start ? 1'b1 : >>3$valid; 
+         
          
          // Program Counter incrementing 4 Bytes(32 Bits) every clock cycle
          $pc[31:0] = >>1$reset ? 0 :
-                     >>1$taken_br ? >>1$br_tgt_pc :
-                     >>1$pc + 32'd4;
+                     >>3$valid_taken_br ? >>3$br_tgt_pc :
+                     >>3$pc + 32'd4;
          // Connecting the Program Counter to the memory address
          $imem_rd_addr[M4_IMEM_INDEX_CNT -1:0] = $pc[M4_IMEM_INDEX_CNT + 1:2];
          
@@ -147,7 +151,7 @@
                          $is_add ? $src1_value + $src2_value :
                         32'bx;
          
-         $rf_wr_en = $rd && $rd_valid;
+         $rf_wr_en = $rd && $rd_valid && $valid;
          $rf_wr_index[4:0] = $rd[4:0];
          $rf_wr_data[31:0] = $result[31:0];
          
@@ -161,6 +165,8 @@
                      $is_bltu ? ($src1_value < $src2_value) :
                      $is_bgeu ? ($src1_value >= $src2_value) : 1'b0 ) :
                      1'b0;
+         
+         $valid_taken_br = $valid && $taken_br;
          
          $br_tgt_pc[31:0] = $pc[31:0] +$imm[31:0];
 

@@ -18,7 +18,7 @@ instructions provided by [VSD](https://vlsisystemdesign.com) and [Redwood EDA](h
 
 |  Sl No. | Project| Description| Bookmark* |
 |:-------|:-------|:-----------|:----------|
-| 1 | riscv_mc_arch| This is an implementation of the RISC-V u-architecture in TL-Verilog | [Makerchip link](https://myth.makerchip.com/sandbox/0jRfjh1Qk/0nZh7ML) |
+| 1 | riscv_mc_arch| This is an implementation of the RISC-V u-architecture in TL-Verilog | [Makerchip link](https://myth.makerchip.com/sandbox/0jRfjh1Qk/0X6hX5V) |
 
 *Bookmarks might not work after a point of time
 
