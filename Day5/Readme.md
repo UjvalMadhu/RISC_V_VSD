@@ -18,7 +18,7 @@ instructions provided by [VSD](https://vlsisystemdesign.com) and [Redwood EDA](h
 
 |  Sl No. | Project| Description| Bookmark |
 |:-------|:-------|:-----------|:----------|
-| 1 | riscv_mc_arch| This is an implementation of the RISC-V u-architecture in TL-Verilog | [Maker Chip](https://myth.makerchip.com/sandbox/0jRfjh1Qk/0Q1hkxL) |
+| 1 | riscv_mc_arch_pipelined| This is an implementation of the completed Pipelined RISC-V u-architecture in TL-Verilog | [Maker Chip](https://myth.makerchip.com/sandbox/0jRfjh1Qk/0Q1hkxL) |
 
 Bookmarks might not work after a point of time.
 
@@ -28,6 +28,7 @@ Bookmarks might not work after a point of time.
 The RISCV implementation from Day4 is updated to be pipelined version in this project. This implemented microarchitecture is shown in the following figure:
 
 Pipelined RISC-V Micro Architecture
+
 <p>
     <img = src = "./Figures/day5_u_arch.PNG">
 </p>
