@@ -100,7 +100,7 @@ The RV32I base instruction set primarily uses six instruction formats:
   - Fields: immediate[31:12], rd, opcode
   - Decoded constituents: opcode, rd, immediate
 
-`J-type (Jump)`: Used for the JAL (Jump and Link) instruction.
+- `J-type (Jump)`: Used for the JAL (Jump and Link) and JALR (Jump and Link Register) instructions.
 
   - Fields: immediate[20|10:1|11|19:12], rd, opcode
   - Decoded constituents: opcode, rd, immediate
