@@ -51,19 +51,19 @@ It reads the values of the source registers from the RF Rd (Register File Read) 
 
 The constituents of the Instruction are explained in detail here
 
-- ==Opcode (7 bits)==: This is the most significant part of the instruction. It fundamentally identifies the type of instruction (e.g., load, store, arithmetic, branch, jump). The opcode determines the major operation to be performed and which instruction format is being used.
+- `Opcode (7 bits)`: This is the most significant part of the instruction. It fundamentally identifies the type of instruction (e.g., load, store, arithmetic, branch, jump). The opcode determines the major operation to be performed and which instruction format is being used.
 
-- ==rd (Destination Register) (5 bits)==: For instructions that write a result to a register (like arithmetic operations, loads, and jumps with link), this field specifies the register that will receive the result. It's usually located towards the beginning of the instruction format.
+- `rd (Destination Register) (5 bits)`: For instructions that write a result to a register (like arithmetic operations, loads, and jumps with link), this field specifies the register that will receive the result. It's usually located towards the beginning of the instruction format.
 
-- ==rs1 (First Source Register) (5 bits)==: For instructions that read one or two operands from registers, this field specifies the first source register.
+- `rs1 (First Source Register) (5 bits)`: For instructions that read one or two operands from registers, this field specifies the first source register.
 
-- ==rs2 (Second Source Register) (5 bits)==: For instructions that read two operands from registers (like most R-type arithmetic and logical operations, and store instructions), this field specifies the second source register.
+- `rs2 (Second Source Register) (5 bits)`: For instructions that read two operands from registers (like most R-type arithmetic and logical operations, and store instructions), this field specifies the second source register.
 
-- ==funct3 (Function Code 3 bits) (3 bits)==: This field provides additional opcode bits and is used to distinguish between different variants of instructions within the same major opcode group. For example, within the "load" opcode, the funct3 field differentiates between load byte (LB), load halfword (LH), and load word (LW).
+- `funct3 (Function Code 3 bits) (3 bits)`: This field provides additional opcode bits and is used to distinguish between different variants of instructions within the same major opcode group. For example, within the "load" opcode, the funct3 field differentiates between load byte (LB), load halfword (LH), and load word (LW).
 
-- ==funct7 (Function Code 7 bits) (7 bits)==: This field provides even more opcode bits, primarily used in R-type instructions (register-register operations) to further differentiate between different arithmetic and logical operations (e.g., add vs. subtract, AND vs. OR).
+- `funct7 (Function Code 7 bits) (7 bits)`: This field provides even more opcode bits, primarily used in R-type instructions (register-register operations) to further differentiate between different arithmetic and logical operations (e.g., add vs. subtract, AND vs. OR).
 
-- ==Immediate (various bit lengths and positions)==: Many RISC-V instructions use an immediate value (a constant embedded within the instruction). The size and position of the immediate field vary depending on the instruction format (I-type, S-type, B-type, U-type, J-type). 
+- `Immediate (various bit lengths and positions)`: Many RISC-V instructions use an immediate value (a constant embedded within the instruction). The size and position of the immediate field vary depending on the instruction format (I-type, S-type, B-type, U-type, J-type). 
 
 The immediate can represent:
 
@@ -75,33 +75,35 @@ The immediate can represent:
 
 The RV32I base instruction set primarily uses six instruction formats:
 
-- ==R-type (Register-Register)==: Used for arithmetic and logical operations between two registers.
+- `R-type (Register-Register)`: Used for arithmetic and logical operations between two registers.
 
-- - Fields: funct7, rs2, rs1, funct3, rd, opcode
-- - Decoded constituents: opcode, rd, rs1, rs2, funct3, funct7
+   - Fields: funct7, rs2, rs1, funct3, rd, opcode
+   - Decoded constituents: opcode, rd, rs1, rs2, funct3, funct7
 
-- ==I-type (Immediate)==: Used for arithmetic and logical operations with an immediate operand, as well as for load instructions and JALR.
+- `I-type (Immediate)`: Used for arithmetic and logical operations with an immediate operand, as well as for load instructions and JALR.
 
-- Fields: immediate[11:0], rs1, funct3, rd, opcode
-- Decoded constituents: opcode, rd, rs1, funct3, immediate
+   - Fields: immediate[11:0], rs1, funct3, rd, opcode
+   - Decoded constituents: opcode, rd, rs1, funct3, immediate
 
-- ==S-type (Store)==: Used for store instructions.
+- `S-type (Store)`: Used for store instructions.
 
-- - Fields: immediate[11:5], rs2, rs1, funct3, immediate[4:0], opcode
-- - Decoded constituents: opcode, rs1, rs2, funct3, immediate
+  - Fields: immediate[11:5], rs2, rs1, funct3, immediate[4:0], opcode
+  - Decoded constituents: opcode, rs1, rs2, funct3, immediate
 
-- B-type (Branch): Used for conditional branch instructions.
+- `B-type (Branch)`: Used for conditional branch instructions.
 
-Fields: immediate[12|10:5], rs2, rs1, funct3, immediate[4:1|11], opcode
-Decoded constituents: opcode, rs1, rs2, funct3, immediate
-U-type (Upper Immediate): Used for instructions like LUI (Load Upper Immediate) and AUIPC (Add Upper Immediate to PC).
+  - Fields: immediate[12|10:5], rs2, rs1, funct3, immediate[4:1|11], opcode
+  - Decoded constituents: opcode, rs1, rs2, funct3, immediate
+  
+- `U-type (Upper Immediate)`: Used for instructions like LUI (Load Upper Immediate) and AUIPC (Add Upper Immediate to PC).
 
-Fields: immediate[31:12], rd, opcode
-Decoded constituents: opcode, rd, immediate
-J-type (Jump): Used for the JAL (Jump and Link) instruction.
+  - Fields: immediate[31:12], rd, opcode
+  - Decoded constituents: opcode, rd, immediate
 
-Fields: immediate[20|10:1|11|19:12], rd, opcode
-Decoded constituents: opcode, rd, immediate
+`J-type (Jump)`: Used for the JAL (Jump and Link) instruction.
+
+  - Fields: immediate[20|10:1|11|19:12], rd, opcode
+  - Decoded constituents: opcode, rd, immediate
 
 The RISC-V instruction format used for decoding is shown here:
 
