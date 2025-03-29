@@ -1,6 +1,16 @@
-# Day 3 of RISC-V Design: Essential Training
+# Day 3 of RISC-V Design: TL-Verilog Essential Training
 
 This repository contains various TL-verilog files that were designed as part of an onramp for the RISC-V Design course offered by [VSD](https://vlsisystemdesign.com) and [Redwood EDA](https://www.redwoodeda.com)
+
+**TL-Verilog (Transaction Level Verilog )** is a Hardware Description Language based on verilog but at a higher level of abstraction. Think of what Python would be to C. 
+
+It is used for designing hardware based on transaction level modelling (TLM).
+
+TLM is a high-level modeling methodology used in hardware design to describe and simulate digital systems. Instead of focusing on the detailed signal-level behavior and cycle-by-cycle operation (as in Register-Transfer Level - RTL), TLM models focus on interactions between components as transactions.
+
+A transaction represents a complete data transfer or operation between two or more components, without necessarily specifying the exact timing and implementation details of that transfer at the signal level.
+
+TL-Verilog can be used for rapid prototyping as it is much easier to code and works at a higher level of abstraction than Verilog. The designer can focus on functionality and architecture rather than the intricacies associated with bit level and signal level modeling.
 
 
 - **Author :** Ujval Madhu
