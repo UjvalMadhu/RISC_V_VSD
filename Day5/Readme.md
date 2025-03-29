@@ -18,14 +18,16 @@ instructions provided by [VSD](https://vlsisystemdesign.com) and [Redwood EDA](h
 
 |  Sl No. | Project| Description| Bookmark |
 |:-------|:-------|:-----------|:----------|
-| 1 | riscv_mc_arch| This is an implementation of the RISC-V u-architecture in TL-Verilog | https://myth.makerchip.com/sandbox/0jRfjh1Qk/0JZhqX5# |
+| 1 | riscv_mc_arch| This is an implementation of the RISC-V u-architecture in TL-Verilog | (Maker Chip)[https://myth.makerchip.com/sandbox/0jRfjh1Qk/0Q1hkxL] |
 
 Bookmarks might not work after a point of time.
 
 
 ## Description:
 
-The RISCV implementation from Day4 is updated to be pipelined version in this project.
+The RISCV implementation from Day4 is updated to be pipelined version in this project. This implemented microarchitecture is shown in the following figure:
+
+
 
 Some Hazards that could arise from pipelining are also effectively mitigated in this implementation:
 1. Branch Control Hazard
@@ -44,10 +46,19 @@ In load operation we aim to load a value from the main memory into the CPU's Reg
 
 Load operation is done by adding a MUX before RF write which can select the data read from the Data memory in 2 cycles if a load operation is needed.
 
+#### Finally, this implementation also supports the Jump Instructions from the RV321 Base instruction set
+Jump instructions like JAL(jump and link) and JALR(Jump and Link Register) are implemented, both these instructions also create 2 invalid cycles which are ignored.
+
+JAL performs an unconditional jump to a target address and simultaneously saves the address of the instruction following the jump (the return address). JALR also performs a jump and saves a return address, but the target address is calculated differently.
+
+The JAL requires that the PC be updated with the PC + immediate value, and the JALR requires that the PC be updated with SRC1 Value (1st operand to the ALU).
+
+JAL is primarily used for making function calls. When the function is finished, it can use JALR (explained below) to jump back to the instruction after the original JAL.
+
+JALR is typically used to return from a function. When the target address of a jump is not known until runtime, it can be calculated and stored in a register. JALR can then be used to jump to that address.
 
 
-
-#### Output (In progress)
+#### Output
 
 The output waveforms generated using makerchip is shown below:
 

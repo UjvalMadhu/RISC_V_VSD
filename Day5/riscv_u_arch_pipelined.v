@@ -53,8 +53,8 @@
          $pc[31:0] = >>1$reset ? 0 :
                      >>3$valid_taken_br ? >>3$br_tgt_pc :
                      >>3$valid_load ? >>3$pc :
-                     //>>3$valid_jump && >>3$is_jal ?  >>3$br_tgt_pc :
-                     //>>3$valid_jump && 3
+                     >>3$valid_jump && >>3$is_jal ?  >>3$br_tgt_pc :
+                     >>3$valid_jump && >>3$is_jalr ? >>3$jalr_tgt_pc : 
                      >>1$pc + 32'd4;
          // Connecting the Program Counter to the memory address
          $imem_rd_addr[M4_IMEM_INDEX_CNT -1:0] = $pc[M4_IMEM_INDEX_CNT + 1:2];
@@ -133,6 +133,7 @@
          $is_lui = $dec_bits ==? 11'bx_xxx_0110111;
          $is_auipc = $dec_bits ==? 11'bx_xxx_0010111;
          $is_jal = $dec_bits ==? 11'bx_xxx_1101111;
+         $is_jalr = $dec_bits ==? 11'bx_000_1100111;
          
          $is_load  = $dec_bits ==? 11'bx_xxx_0000011;
          
@@ -237,9 +238,15 @@
                      $is_bgeu ? ($src1_value >= $src2_value) : 1'b0 ) :
                      1'b0;
          
-         $valid = !(>>1$taken_br || >>2$taken_br || >>1$valid_load || >>2$valid_load );
+         // Jump target Program counter update value
+         $jalr_tgt_pc[31:0] = $src1_value[31:0] + $imm[31:0];
+         
+         // Valid Conditions for Execution, Load, Jump and Branch
+         $valid = !(>>1$taken_br || >>2$taken_br || >>1$valid_load || >>2$valid_load || >>1$valid_jump || >>2$valid_jump);
          
          $valid_load = $valid && $is_load;
+         
+         $valid_jump = $valid && ($is_jal || $is_jalr );
          
          $valid_taken_br = $valid && $taken_br;
          
