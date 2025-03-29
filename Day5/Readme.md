@@ -18,7 +18,7 @@ instructions provided by [VSD](https://vlsisystemdesign.com) and [Redwood EDA](h
 
 |  Sl No. | Project| Description| Bookmark |
 |:-------|:-------|:-----------|:----------|
-| 1 | riscv_mc_arch| This is an implementation of the RISC-V u-architecture in TL-Verilog | (Maker Chip)[https://myth.makerchip.com/sandbox/0jRfjh1Qk/0Q1hkxL] |
+| 1 | riscv_mc_arch| This is an implementation of the RISC-V u-architecture in TL-Verilog | [Maker Chip](https://myth.makerchip.com/sandbox/0jRfjh1Qk/0Q1hkxL) |
 
 Bookmarks might not work after a point of time.
 
@@ -27,6 +27,10 @@ Bookmarks might not work after a point of time.
 
 The RISCV implementation from Day4 is updated to be pipelined version in this project. This implemented microarchitecture is shown in the following figure:
 
+Pipelined RISC-V Micro Architecture
+<p>
+    <img = src = "./Figures/day5_u_arch.PNG">
+</p>
 
 
 Some Hazards that could arise from pipelining are also effectively mitigated in this implementation:
@@ -60,12 +64,17 @@ JALR is typically used to return from a function. When the target address of a j
 
 #### Output
 
-The output waveforms generated using makerchip is shown below:
+The final implemented Design and the output waveforms generated using makerchip are shown below:
 
 
-1. RISC-V Micro Architecture
+1. Final Implemented Pipelined RISC-V Micro Architecture
 <p>
-    <img = src = "./Figures/cb_calc_waveform.PNG">
+    <img = src = "./Figures/day5_design.PNG">
+</p>
+
+2. A Snippet of the output waveform is shown here:
+<p>
+    <img = src = "./Figures/day5_waveform.PNG">
 </p>
 
 
