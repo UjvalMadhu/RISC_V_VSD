@@ -128,7 +128,7 @@ Heap memory management is more complex than stack memory management and can lead
 
 Memory Layout of typical C programs is shown here:
 <p>
-    <img = src = "./Figures/memory_layout.PNG" alt = "Memory Layout of Typical C programs">
+    <img = src = "./Figures/memory_layout.png" alt = "Memory Layout of Typical C programs">
     <figcaption> Memory Layout</figcaption>
 </p>
 
@@ -175,7 +175,7 @@ The range of positive signed numbers that can be represented using 64 Bits is sh
 
 The range of negative signed numbers that can be represented using 64 Bits is shown here
 <p>
-    <img = src = "./Figures/signed3.PNG" alt = "Figure showing range of negative signed numbers that can be represented using 64 Bits">
+    <img = src = "./Figures/signed3.png" alt = "Figure showing range of negative signed numbers that can be represented using 64 Bits">
     <figcaption> Range of negative signed numbers with 64 Bits</figcaption>
 </p>
 
@@ -200,7 +200,6 @@ The Labs for day 1 included designing a simple C program to calculate the sum of
 1. Command for compiling to RV64i instruction is shown here:
 ```
 riscv64-unknown-elf-gcc -0fast -mabi=lp64 -march=rv64i -o file_name.o file_name.c
-
 ```
   - `-Ofast flag`: This flag enables aggressive optimizations for speed. The compiler will try to make your program run as fast as possible, even if it means potentially sacrificing strict adherence to language standards in some edge cases.
   - `-mabi=lp64` flag: This specifies the Application Binary Interface (ABI) to be used. lp64 is a common ABI for 64-bit systems where long and pointers are 64 bits, and int is 32 bits. This ensures that your code is compiled in a way that is compatible with other libraries and code using the same ABI.
@@ -210,11 +209,14 @@ riscv64-unknown-elf-gcc -0fast -mabi=lp64 -march=rv64i -o file_name.o file_name.
 **Output**: This command will take the C source file (file_name.c) and produce a compiled object file named file_name.o. This object file contains the machine code for the program, but it is not yet a complete executable. In a typical build process it would need to be linked with other object files and libraries (if they exist) to create a final executable program.
 
 2. To generate the output from the object file on the shell, we can use the spike command:
-`spike pk file_name.o`
-
+```
+spike pk file_name.o
+```
 
 3. And to debug the object file we can use the spike command:
-`spike -d pk file_name.o`
+```
+spike -d pk file_name.o
+```
 
 During debug(after the above command) if we want to look into any of the register values we can look into the internal registers of the processor by using: `reg [core] [reg_name, example a2]
 

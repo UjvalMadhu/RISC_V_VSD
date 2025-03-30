@@ -109,8 +109,8 @@ Toolchain Development: A stable ABI simplifies the development of compilers, ass
 
 A Diagram showing the interaction of the ABI, User & system interface is shown here:
 <p>
-    <img = src = "./Figures/abi_isa.PNG" alt = "ABI, SYstem and User Interfaces and flow of data">
-    <figcaption>ABI, SYstem and User Interfaces and flow of data </figcaption>
+    <img = src = "./Figures/abi_isa.png" alt = "ABI, System and User Interfaces and flow of data">
+    <figcaption>ABI, System and User Interfaces and flow of data </figcaption>
 </p>
 
 #### RISC-V ABI Variations:
@@ -141,7 +141,7 @@ For programmer convenience and to improve code readability, the RISC-V Applicati
 
 A table of the common ABI names for the integer registers is shown here:
 <p>
-    <img = src = "./Figures/registers_abi.PNG" alt = "Common ABI names for the integer registers in a RISC-V processor">
+    <img = src = "./Figures/registers_abi.png" alt = "Common ABI names for the integer registers in a RISC-V processor">
     <figcaption> Number representation</figcaption>
 </p>
 
