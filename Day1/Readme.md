@@ -189,7 +189,7 @@ Data Model Depicting the sizes of Standard Data types in different Bases is show
 
 Commonly used Data types and calling argument:
 <p>
-    <img = src = "./Figures/data_type_ABI.PNG" alt = "Long, long long int and int versions">
+    <img = src = "./Figures/labs_datatypes.PNG" alt = "Long, long long int and int versions">
     <figcaption> Long, long long int and int versions</figcaption>
 </p>
 
@@ -198,8 +198,10 @@ Commonly used Data types and calling argument:
 The Labs for day 1 included designing a simple C program to calculate the sum of numbers from 1 ..9, compiling it into RISC-V RV64i assembly instructions using the GNU compiler and debugging the code using Spike:
 
 1. Command for compiling to RV64i instruction is shown here:
-`riscv64-unknown-elf-gcc -0fast -mabi=lp64 -march=rv64i -o file_name.o file_name.c`
+```
+riscv64-unknown-elf-gcc -0fast -mabi=lp64 -march=rv64i -o file_name.o file_name.c
 
+```
   - `-Ofast flag`: This flag enables aggressive optimizations for speed. The compiler will try to make your program run as fast as possible, even if it means potentially sacrificing strict adherence to language standards in some edge cases.
   - `-mabi=lp64` flag: This specifies the Application Binary Interface (ABI) to be used. lp64 is a common ABI for 64-bit systems where long and pointers are 64 bits, and int is 32 bits. This ensures that your code is compiled in a way that is compatible with other libraries and code using the same ABI.
   - `-march=rv64i` flag: This specifies the target RISC-V architecture. rv64i indicates the base 64-bit integer instruction set. The compiler will generate instructions that are supported by this base architecture.
