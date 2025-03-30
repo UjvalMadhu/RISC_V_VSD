@@ -141,7 +141,7 @@ For programmer convenience and to improve code readability, the RISC-V Applicati
 
 A table of the common ABI names for the integer registers is shown here:
 <p>
-    <img = src = "./Figures/registers_abi.png" alt = "Common ABI names for the integer registers in a RISC-V processor">
+    <img = src = "./Figures/register_abi.png" alt = "Common ABI names for the integer registers in a RISC-V processor">
     <figcaption> Number representation</figcaption>
 </p>
 
