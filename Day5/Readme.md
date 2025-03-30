@@ -1,6 +1,6 @@
 # Day 5 of RISC-V Design: Micro-Architecture
 
-This repository contains the RISC-V Micro Architecture Designed using TL-Verilog based on the
+This repository contains the Pipelined RISC-V Micro Architecture Designed using TL-Verilog based on the
 instructions provided by [VSD](https://vlsisystemdesign.com) and [Redwood EDA](https://www.redwoodeda.com)
 
 
